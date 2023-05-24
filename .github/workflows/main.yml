@@ -38,3 +38,7 @@ jobs:
             - run: yarn build
 
             - run: yarn start
+
+            - run: npm install -g flowise
+
+            - run: npx flowise start
