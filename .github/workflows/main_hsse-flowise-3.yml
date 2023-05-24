@@ -24,7 +24,7 @@ jobs:
 
       - run: cd Flowise
 
-      - run: yarn install --ignore-engines
+      - run: yarn install
 
       - run: yarn build
 
