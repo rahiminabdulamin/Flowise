@@ -21,20 +21,17 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Install Flowise
+        run: npm install -g flowise
+
+      - name: Start Flowise
+        run: npx flowise start
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
-
-      - name: Install Flowise
-        run: npm install -g flowise
-
-      - name: Start Flowise
-        run: npx flowise start
 
   deploy:
     runs-on: windows-latest
