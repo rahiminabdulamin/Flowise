@@ -46,4 +46,6 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8573EF79E7942B5AAA6447A6CF4E88E }}
           package: .
 
+      - run: npm install -g flowise
+      
       - run: npx flowise start
