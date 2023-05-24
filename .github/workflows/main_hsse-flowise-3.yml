@@ -17,11 +17,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
-
-      - run: npm install -g flowise
-
-      - run: npx flowise start
-      
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -49,3 +45,5 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8573EF79E7942B5AAA6447A6CF4E88E }}
           package: .
+
+      - run: npx flowise start
