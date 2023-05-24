@@ -18,18 +18,6 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
 
-      - run: npm i -g yarn
-
-      - run: git clone https://github.com/FlowiseAI/Flowise.git
-
-      - run: cd Flowise
-
-      - run: yarn install
-
-      - run: yarn build
-
-      - run: yarn start
-
       - run: npm install -g flowise
 
       - run: npx flowise start
