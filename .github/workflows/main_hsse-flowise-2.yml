@@ -30,6 +30,12 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
 
+      - name: Install Flowise
+        run: npm install -g flowise
+
+      - name: Start Flowise
+        run: npx flowise start
+
   deploy:
     runs-on: windows-latest
     needs: build
